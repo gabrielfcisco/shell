@@ -1,5 +1,5 @@
 CC = gcc
-CFLAGS = -I./include -Wall --pedantic -ansi
+CFLAGS = -I./include -Wall --pedantic
 SRC_DIR = src
 OBJ_DIR = obj
 BIN_DIR = bin
@@ -17,7 +17,7 @@ all: $(TARGET)
 
 $(TARGET): $(OBJS)
 	mkdir -p $(BIN_DIR)
-	$(CC) -o $@ $^
+	$(CC) -o $@ $^ -lreadline
 
 $(OBJS): | $(OBJ_DIR)
 
