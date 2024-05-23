@@ -61,9 +61,9 @@ void ExecCommand (char** command){
 void HandleFile(char* filename){
     FILE *fp;
     const int bufferSize = 4096;
-    char buffer[bufferSize];
-    char copyBuffer[bufferSize];
+    char *buffer;
     char *command[2];
+    buffer = (char*)calloc(bufferSize, sizeof(char *));
     fp = fopen(filename, "rb");
     if (fp == NULL)
     {
@@ -72,13 +72,12 @@ void HandleFile(char* filename){
     }
     while(fgets(buffer, bufferSize, fp))
     {
-        strcpy(copyBuffer, buffer);
         if(!(buffer[0] == '#' || buffer[0]=='\n'))
         {
             printf("%s", buffer);
-            int lenght = strlen(copyBuffer);
-            copyBuffer[lenght -1] = '\0';
-            command[0] = strtok(copyBuffer, " ");
+            int lenght = strlen(buffer);
+            buffer[lenght -1] = '\0';
+            command[0] = strtok(buffer, " ");
             command[1] = strtok(NULL, " ");
             ExecCommand(command);
         }

@@ -1,4 +1,4 @@
-#!/home/aluno/projeto/shell/bin/shell
-path /home/aluno/projeto/shell/bin
+#!/home/aluno/shell/bin/shell
+path /home/aluno/shell/bin
 ls
 cat test.sh
