@@ -47,7 +47,8 @@ main (int argc, char **argv)
         if (strcmp (argv[1], "-R") == 0)
             RecDir (argv[2], 1);
         else
-            Usage ();
+            printf("Uso de argumento errado");
+            return 1;
         break;
     default:
         RecDir (".", 0);
