@@ -13,9 +13,9 @@ sudo apt-get install libreadline-dev
 ## Como Compilar:
 
 ### Compartilhe a pasta onde colocou o projeto com a VM
-Comando para montar a pasta compartilhada (Troque PastaVM e PastaPC por suas respectivas pastas):
+Comando para montar a pasta compartilhada (as pastas precisam possuir o mesmo nome):
 ```sh
-sudo mount -t vboxsf PastaVM PastaPC
+sudo mount -t vboxsf <PastaVM> <PastaPC>
 ```
 
 ### Navegue até a pasta onde está o projeto
@@ -57,7 +57,7 @@ ls [FLAGS] <caminho>
 ```
 - `-l` - mostra todas as informações
 - `-a`- mostra todos os arquivos e diretórios
-- `-R`- mostra recursivamente todos os aquivos e diretórios
+- `-R`- mostra recursivamente todos os arquivos e diretórios
 
 ### cat
 Imprime o conteúdo de um ou mais arquivos
@@ -91,7 +91,8 @@ Se você salvou o arquivo pelo windows rode o comando:
 ```sh
 sed -i -e 's/\r$//' test.sh
 ```
-Fora do programa, rodar:
+Fora do programa, tornar o arquivo executável e rodar:
 ```sh
+chmod +x test.sh
 ./test.sh
 ```

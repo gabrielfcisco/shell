@@ -28,7 +28,7 @@ void execExtBin(char **command) {
         // Loop pelos caminhos para encontrar o executável
         for (int i = 0; PATH[i] != NULL; i++) {
             snprintf(buffer, sizeof(buffer), "%s/%s", PATH[i], command[0]);
-            printf("tentando: %s\n", buffer);
+            // printf("tentando: %s\n", buffer);
 
             // Verifica se o arquivo é executável
             if (access(buffer, X_OK) == 0) {
@@ -52,7 +52,7 @@ void execExtBin(char **command) {
         waitpid(pid, &status, 0);
 
         if(WIFEXITED(status)){
-            printf("Programa %s encerrado\n", command[0]);
+            // printf("Programa %s encerrado\n", command[0]);
         }
         else{
             printf("Programa terminado de forma anormal\n");

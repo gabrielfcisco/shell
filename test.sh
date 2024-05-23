@@ -1,6 +1,6 @@
-#!/home/aluno/shell/bin/shell
+#!/home/gabriel/Faculdade/SISTEMAS_OPERACIONAIS/PROJETO/shell/bin/shell
 
-path /home/aluno/shell/bin
+path /home/gabriel/Faculdade/SISTEMAS_OPERACIONAIS/PROJETO/shell/bin/shell
 
 ls
 
