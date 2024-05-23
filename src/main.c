@@ -25,8 +25,8 @@ int main(int argc, char *argv[])
     printf("\t\t\t\tBem Vindo ao Nosso Shell!!\n");
     printf("\t\t\tEsperamos que você tenha uma boa experiencia.\n");
     while(1){
-        printf("%s>", getcwd(dir, 512));
-        input = readline(NULL);
+        printf("%s", getcwd(dir, 512));
+        input = readline("> ");
         command[0] = strtok(input, " ");
         command[1] = strtok(NULL, " ");
         if(strcmp(command[0], "cd")==0){
