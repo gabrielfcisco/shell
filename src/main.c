@@ -2,6 +2,7 @@
 #include <stdlib.h>
 #include <string.h>
 #include <unistd.h>
+#include <sys/types.h>
 #include <sys/wait.h>
 #include <readline/readline.h>
 #include <readline/history.h>
@@ -32,18 +33,27 @@ int main(int argc, char *argv[])
         }
         else if(strcmp(command[0], "path")==0){
             path(command[1]);
+            printf("\n%s",PATH[0]);
         }
         else if(strcmp(command[0], "exit")==0){
             break;
         }
         else
         {
+<<<<<<< Updated upstream
             // execExtBin(command);
         }
     }
     printf("Shell Finalizado com Sucesso. Obrigado por usar nosso programa.\n");
+=======
+            execExtBin(command);
+        }
+    }
+
+>>>>>>> Stashed changes
     free(dir);
     free(input);
     free(command[1]);
+
     return 0;
 }
