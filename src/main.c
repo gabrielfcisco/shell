@@ -20,6 +20,8 @@ int main(int argc, char *argv[])
         command[i] = (char*)calloc(256, sizeof(char *));
     }
     //fopen(argv[1], "r");
+    printf("\t\t\t\tBem Vindo ao Nosso Shell!!\n");
+    printf("\t\t\tEsperamos que você tenha uma boa experiencia.\n");
     while(1){
         printf("%s>", getcwd(dir, 512));
         input = readline(NULL);
@@ -36,9 +38,10 @@ int main(int argc, char *argv[])
         }
         else
         {
-            //execExtBin(command);
+            // execExtBin(command);
         }
     }
+    printf("Shell Finalizado com Sucesso. Obrigado por usar nosso programa.\n");
     free(dir);
     free(input);
     free(command[1]);
