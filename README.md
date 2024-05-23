@@ -81,9 +81,9 @@ gcc --version
 ```
 
 ### executar comandos por arquivos batch
-Crie um arquivo novo .sh com uma shebang na primeira linha
+Crie um arquivo novo .sh com uma shebang na primeira linha(aponta para o executável do nosso shell, com o formato #!/path/to/bin/shell)
 ```sh
-#!/home/aluno/proj/bin/shell	//exemplo de shebang(ela precisa apontar para o executável do nosso shell)
+#!/home/aluno/shell/bin/shell
 command 1
 command 2
 ```
