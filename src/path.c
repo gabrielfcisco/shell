@@ -3,13 +3,7 @@
 #include <stdlib.h>
 #include <string.h>
 #include <unistd.h>
-<<<<<<< Updated upstream
 #include <sys/stat.h>
-=======
-#include <sys/wait.h>
-#include "../include/path.h"
-
->>>>>>> Stashed changes
 
 char **PATH = NULL;
 
@@ -44,25 +38,6 @@ path (char *cmd)
             free (path); // Libera a memória alocada antes de retornar
             return;
         }
-<<<<<<< Updated upstream
-=======
-
-        // Parseia a string PATH
-        char *token = strtok(path, ":");
-        int count = 0;
-        while (token != NULL) {
-            // Faz uma cópia do caminho e armazena no array
-            PATH[count] = strdup(token);
-            token = strtok(NULL, ":");
-            count++;
-        }
-        PATH[count] = NULL; // Termina o array com NULL
-    }else{
-        int count = 0;
-        while(PATH[count] != NULL){
-            count++;
-        }
->>>>>>> Stashed changes
 
         // Parseia a string PATH
         char *token = strtok (path, ":");
@@ -83,7 +58,6 @@ path (char *cmd)
         }
         PATH[count] = NULL; // Termina o array com NULL
     }
-<<<<<<< Updated upstream
     else
     {
         int count = 0;
@@ -110,25 +84,11 @@ path (char *cmd)
         PATH[count] = NULL; // Termina o array com NULL
     }
 
-=======
-
-     // Libera a memória alocada
-     //for (int i = 0; path[i] != NULL; i++) {
-     //    free(path[i]);
-    // }
-    
->>>>>>> Stashed changes
     int count = 0;
     while (PATH[count] != NULL)
     {
         printf ("[%d]: %s\n", count + 1, PATH[count]);
         count++;
     }
-<<<<<<< Updated upstream
     free (path);
 }
-=======
-    free(path);
-
-}
->>>>>>> Stashed changes

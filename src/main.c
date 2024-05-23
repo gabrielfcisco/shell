@@ -40,17 +40,11 @@ int main(int argc, char *argv[])
         }
         else
         {
-<<<<<<< Updated upstream
-            // execExtBin(command);
-        }
-    }
-    printf("Shell Finalizado com Sucesso. Obrigado por usar nosso programa.\n");
-=======
             execExtBin(command);
         }
     }
+    printf("Shell Finalizado com Sucesso. Obrigado por usar nosso programa.\n");
 
->>>>>>> Stashed changes
     free(dir);
     free(input);
     free(command[1]);
