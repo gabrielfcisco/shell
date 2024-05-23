@@ -29,7 +29,6 @@ int main(int argc, char *argv[])
         input = readline("> ");
         command[0] = strtok(input, " ");
         command[1] = strtok(NULL, " ");
-        printf("\n%s\n", command[0]);
         if(strcmp(command[0], "exit")==0)
         {
             break;
