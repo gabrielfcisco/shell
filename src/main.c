@@ -17,7 +17,8 @@ int main(int argc, char *argv[])
 {
     char *dir;
     char *input;
-    char *command[2];
+    char *command[3];
+    command[2]=NULL;
     dir = (char*)calloc(512, sizeof(char *));
     if (argc > 1){
         HandleFile(argv[1]);
@@ -62,8 +63,9 @@ void HandleFile(char* filename){
     FILE *fp;
     const int bufferSize = 4096;
     char *buffer;
-    char *command[2];
+    char *command[3];
     buffer = (char*)calloc(bufferSize, sizeof(char *));
+    command[2]=NULL;
     fp = fopen(filename, "rb");
     if (fp == NULL)
     {
@@ -83,4 +85,5 @@ void HandleFile(char* filename){
         }
     }
     fclose(fp);
+    free(buffer);
 }
