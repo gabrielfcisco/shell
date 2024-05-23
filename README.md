@@ -31,11 +31,51 @@ make all
 
 ### Para Executar o Programa:
 ```sh
-./bin/PROJETO2
+./bin/shell
 ```
 
-### Quando dentro do programa lembre-se de usar o comando path
+### Quando dentro do programa lembre-se de inicializar a váriavel PATH usando o comando path
 ```sh
+path ./bin
 path /path/to/bin
 ```
 Troque "/path/to/bin" para o caminho dos binários que deseje executar
+
+## Comandos
+### cd
+Alterna para o diretório específicado
+
+```sh
+cd <caminho>
+```
+
+### ls
+Lista arquivos e diretórios dentro de um diretório
+
+```sh
+ls [FLAGS] <caminho>
+```
+- `-l` - mostra todas as informações
+- `-a`- mostra todos os arquivos e diretórios
+- `-R`- mostra recursivamente todos os aquivos e diretórios
+
+### cat
+Imprime o conteúdo de um ou mais arquivos
+
+```sh
+cat <arquivo1> <arquivo2>
+```
+
+### exit
+Encerra o shell
+
+```sh
+exit
+```
+### programas externos
+Após ter colocado o caminho para o executável no PATH, chamar o nome do programa
+
+```sh
+path /usr/bin
+gcc --version
+```
