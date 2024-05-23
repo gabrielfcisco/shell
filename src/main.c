@@ -8,6 +8,7 @@
 #include <readline/history.h>
 #include "../include/cd.h"
 #include "../include/path.h"
+#include "../include/execExtBin.h"
 
 int main(int argc, char *argv[])
 {
