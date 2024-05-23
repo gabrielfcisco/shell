@@ -17,10 +17,6 @@ int main(int argc, char *argv[])
     char *input;
     char *command[2];
     dir = (char*)calloc(512, sizeof(char *));
-    input = (char*)calloc(512, sizeof(char *));
-    for(i=0;i<2;i++){
-        command[i] = (char*)calloc(256, sizeof(char *));
-    }
     //fopen(argv[1], "r");
     printf("\t\t\t\tBem Vindo ao Nosso Shell!!\n");
     printf("\t\t\tEsperamos que você tenha uma boa experiencia.\n");
