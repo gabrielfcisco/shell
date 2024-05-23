@@ -19,7 +19,7 @@ int main(int argc, char *argv[])
     char *input;
     char *command[2];
     dir = (char*)calloc(512, sizeof(char *));
-    if (argc > 0){
+    if (argc > 1){
         HandleFile(argv[1]);
     }
     printf("\t\t\t\tBem Vindo ao Nosso Shell!!\n");

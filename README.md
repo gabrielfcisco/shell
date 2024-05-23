@@ -79,3 +79,19 @@ Após ter colocado o caminho para o executável no PATH, chamar o nome do progra
 path /usr/bin
 gcc --version
 ```
+
+### executar comandos por arquivos batch
+Crie um arquivo novo .sh com uma shebang na primeira linha
+```sh
+#!/home/aluno/proj/bin/shell	//exemplo de shebang(ela precisa apontar para o executável do nosso shell)
+command 1
+command 2
+```
+Se você salvou o arquivo pelo windows rode o comando:
+```sh
+sed -i -e 's/\r$//' test.sh
+```
+Fora do programa, rodar:
+```sh
+./test.sh
+```
