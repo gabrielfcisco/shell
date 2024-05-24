@@ -29,7 +29,7 @@ int main(int argc, char *argv[])
         printf("%s", getcwd(dir, 512));
         input = readline("> ");
         command[0] = strtok(input, " ");
-        command[1] = strtok(NULL, " ");
+        command[1] = strtok(NULL, "\0");
         if(strcmp(command[0], "exit")==0)
         {
             break;

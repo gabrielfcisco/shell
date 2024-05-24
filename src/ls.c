@@ -65,7 +65,7 @@ void RecDir(char *path, int recursive, int include_hidden, int detailed) {
     }
     struct dirent *ep;
     char newdir[512];
-    printf(BLUE "%s :\n" WHITE, path);
+    printf(BLUE "\n%s :\n\n" WHITE, path);
     while ((ep = readdir(dp))) {
         if (!include_hidden && strncmp(ep->d_name, ".", 1) == 0) {
             continue;
@@ -93,19 +93,30 @@ void RecDir(char *path, int recursive, int include_hidden, int detailed) {
 int main(int argc, char **argv) {
     int recursive = 0, include_hidden = 0, detailed = 0;
     char *path = ".";
+    int buffer = 10, count = 0;
+    char *command[buffer];
+    if(argc > 1){
+        char *token = strtok(argv[1], " ");
+        while (token != NULL) {
+            command[count] = strdup(token); // Alocar memória para cada token e copiá-lo
+            count++;
+            token = strtok(NULL, " ");
+        }
+    }
 
-    for (int i = 1; i < argc; i++) {
-        if (strcmp(argv[i], "-R") == 0) {
+    for (int i = 1; i < count; i++) {
+        if (strcmp(command[i], "-R") == 0) {
             recursive = 1;
-        } else if (strcmp(argv[i], "-a") == 0) {
+        } else if (strcmp(command[i], "-a") == 0) {
             include_hidden = 1;
-        } else if (strcmp(argv[i], "-l") == 0) {
+        } else if (strcmp(command[i], "-l") == 0) {
             detailed = 1;
         } else {
-            path = argv[i];
+            path = command[i];
         }
     }
 
     RecDir(path, recursive, include_hidden, detailed);
+    printf("\n\n");
     return 0;
 }

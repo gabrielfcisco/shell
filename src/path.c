@@ -40,7 +40,7 @@ path (char *cmd)
         }
 
         // Parseia a string PATH
-        char *token = strtok (path, ":");
+        char *token = strtok (path, ": ");
         int count = 0;
         while (token != NULL)
         {
@@ -49,7 +49,7 @@ path (char *cmd)
 
             if (stat(token, &sb) == 0 && S_ISDIR(sb.st_mode)) {
                 PATH[count] = strdup (token);
-                token = strtok (NULL, ":");
+                token = strtok (NULL, ": ");
                 count++;
             } else {
                 perror("stat()");
@@ -66,7 +66,7 @@ path (char *cmd)
             count++;
         }
 
-        char *token = strtok (path, ":");
+        char *token = strtok (path, ": ");
         while (token != NULL)
         {
             // Faz uma cópia do caminho e armazena no array
@@ -74,7 +74,7 @@ path (char *cmd)
 
             if (stat(token, &sb) == 0 && S_ISDIR(sb.st_mode)) {
                 PATH[count] = strdup (token);
-                token = strtok (NULL, ":");
+                token = strtok (NULL, ": ");
                 count++;
             } else {
                 perror("stat()");
